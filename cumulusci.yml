@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.71.0'
+project:
+    name: srsTesting
+    package:
+        name: srsTesting
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/srsTesting/tests
+            options:
+                outputdir: robot/srsTesting/results
+
+    robot_testdoc:
+        options:
+            path: robot/srsTesting/tests
+            output: robot/srsTesting/doc/srsTesting_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
